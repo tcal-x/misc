@@ -6,10 +6,11 @@ The goal of this tutorial is to demonstrate another use of the USB cable connect
 __Software Needed:__ picocom
 
 * Install "picocom" on your laptop -- `sudo apt install picocom`
-* Remember the new /dev/ttyUSBx that you saw?  We're going to connect to that.
+* Remember the new /dev/ttyUSBx that you saw in the previous tutorial?  We're going to connect to that.
 * NOTE: If you unplug the board, then plug it in again, it might end up at a different ttyUSB!
-* Run `picocom --baud 115200 /dev/ttyUSBx` -- replace 'x' with 0 or 1 or 2
+* Run `picocom --baud 115200 /dev/ttyUSBx` -- replace 'x' with 0 or 1 or 2, which ever exists and works.
 * Don't worry -- you won't wreck anything if you choose the wrong one.
+* If you choose the wrong one, use "ctrl-a ctrl-x" to exit picocom, and try a different ttyUSB.
 * You will see the board print out stuff on the terminal as you push buttons like before.
 * You can also notice that a small LED by the USB cable connector on the board flickers as it sends data over the USB cable
 * If you type a character in the picocom terminal, you will see the other LED by the cable flicker.   The board just ignores it with this gateware, however.
@@ -37,8 +38,8 @@ You can unplug the cable to power off the board (some other boards have a power 
 
 ### What happened? 
 
-We're using the USB as a communication link.  This style is sometimes called "UART".  
-There is just one bit in each direction.  When you start using it in designs, if you work with Verilog,
+We're using the USB as a communication link.  This style is sometimes refered to as "UART" or "serial link".  
+There is just one wire in each direction.  When you start using it in designs, if you work with Verilog,
 you will see the pins "rx" and "tx" for receive and transmit. 
 
 If you don't set the speed/"baud" correctly, you will see jibberish, since you're not sampling the bits correctly, and this protocol isn't smart enough to auto-adapt.  But don't worry, you won't break anything if you have the wrong speed, so if you don't know, you can just try the commonly-used ones (115200, 406800, 1e6).

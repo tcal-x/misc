@@ -1,5 +1,5 @@
 
-## 1. Programming the Arty Board
+## WIP DO NOT USE 2. Programming the Arty Board
 
 The goal of this tutorial is to demonstrate downloading a bitstream to the Arty board to change its behavior,
 and then restore behavior to the built-in demo.

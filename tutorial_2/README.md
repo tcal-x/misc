@@ -1,13 +1,15 @@
 
-## WIP DO NOT USE 2. Programming the Arty Board
+## 2. Programming the Arty Board
 
-The goal of this tutorial is to demonstrate downloading a bitstream to the Arty board to change its behavior,
+The goal of this tutorial is to demonstrate downloading a bitstream to the Arty A7 35T board to change its behavior,
 and then restore behavior to the built-in demo.
 
 __Software Needed:__ openOCD
 
-* Install "openocd" on your laptop -- `sudo apt install openocd`
-* Play around with the pre-loaded demo -- press BTN0...BTN3 and see the LED behavior change.
+### Directions:
+
+* Install "openocd" on your laptop: `sudo apt install openocd`
+* Play around with the pre-loaded demo: press BTN0...BTN3 and see the LED behavior change.
 * Sitting in this directory, run the following command on your laptop:
   `openocd -f ./openocd_xilinx.cfg -c "init ; pld load 0 top.bit ; exit"`
 * You shold see the following on your laptop (details will vary):
@@ -25,7 +27,7 @@ Info : JTAG tap: xc7.tap tap/device found: 0x0362d093 (mfg: 0x049 (Xilinx), part
 ```
 * On the board, you should see the `DONE` LED by the `PROG` button go dark for about a second, then come back on.
 * You should see the behavior of the 4+4 LEDs change.   They should now start counting in binary.   The 4 LSB are the bright LEDs, and the 4 MSB are the smaller green LEDs.  The count should increment about every 2.5 seconds.
-* Now, press the `PROG` button.   Behavior should revert to the built in demo.
+* Now, press the `PROG` button.   Behavior should revert to the built-in demo.
 * If you wish, run the `openocd` command again.
 
 ### What happened? 
@@ -38,7 +40,7 @@ when it is turned off, so it must be reloaded every time it is turned on.
 The `openocd` command transfers the laptop file `top.bit` into the FPGA's configuration storage using the USB cable.
 This overwrites the previous contents of the FPGA's configuration storage, 
 and the FPGA will take on different behavior.
-_This does not affect the demo bistream stored in the flash memory._   
+_This does not affect the demo bitstream stored in the flash memory._   
 
 Pressing the `PROG` button forces the FPGA to reload its configuration from the flash memory,
 so it will get the demo bitstream again.

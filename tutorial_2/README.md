@@ -14,7 +14,7 @@ __Software Needed:__ openOCD
 * Clone this repository if you have not already, and `cd` to this directory. 
 * Sitting in this directory, run the following command on your laptop:
   `openocd -f ./openocd_xilinx.cfg -c "init ; pld load 0 top.bit ; exit"`
-* You shold see the following on your laptop (details will vary):
+* You should see the following on your laptop (details will vary):
 ```
 $ openocd -f ./openocd_xilinx.cfg -c "init ; pld load 0 top.bit ; exit"
 Open On-Chip Debugger 0.10.0+dev-01012-ged8fa09cf-dirty (2020-01-15-04:14)

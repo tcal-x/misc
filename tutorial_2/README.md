@@ -4,6 +4,12 @@
 The goal of this tutorial is to demonstrate downloading a bitstream to the Arty A7 35T board to change its behavior,
 and then restore behavior to the built-in demo.
 
+> NOTE: If you are running Vivado locally, you might never need to use this, since Vivado can directly put a bitstream on your board.
+> Using openOCD is mostly useful in the following cases:
+> * if you are using non-Vivado tools; 
+> * if you are running Vivado remotely and transferring the bitsteram file to your local machine; 
+> * or if you have the result of a previous Vivado run and don't want to wait for Vivado to start up just to load the bitstream on your board.
+
 __Software Needed:__ openOCD
 
 ### Directions:

@@ -9,7 +9,9 @@ __Software Needed:__ openOCD
 ### Directions:
 
 * Install "openocd" on your laptop: `sudo apt install openocd`
+* Plug in the USB cable to connect the FPGA board to your laptop.
 * Play around with the pre-loaded demo: press BTN0...BTN3 and see the LED behavior change.
+* Clone this repository if you have not already, and `cd` to this directory. 
 * Sitting in this directory, run the following command on your laptop:
   `openocd -f ./openocd_xilinx.cfg -c "init ; pld load 0 top.bit ; exit"`
 * You shold see the following on your laptop (details will vary):
@@ -28,7 +30,7 @@ Info : JTAG tap: xc7.tap tap/device found: 0x0362d093 (mfg: 0x049 (Xilinx), part
 * On the board, you should see the `DONE` LED by the `PROG` button go dark for about a second, then come back on.
 * You should see the behavior of the 4+4 LEDs change.   They should now start counting in binary.   The 4 LSB are the bright LEDs, and the 4 MSB are the smaller green LEDs.  The count should increment about every 2.5 seconds.
 * Now, press the `PROG` button.   Behavior should revert to the built-in demo.
-* If you wish, run the `openocd` command again.
+* If you wish, repeat using the `openocd` command to load the counter configuation, then resetting by power-cycling or pressing `PROG`.
 
 ### What happened? 
 

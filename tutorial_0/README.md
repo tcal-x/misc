@@ -12,9 +12,11 @@ __Software Needed:__ none
 * Find the 4 pushbuttons in one corner of the board, `BTN0`...`BTN3`.  
 * Press one of the two middle ones.  You should see some kind of flashing/cycling in the bright LEDs.
 * Press the button _farthest_ from the corner to reset (`BTN3`).   You may need to hold it down for a second or so.
+  * Or, you can press the `RESET` button.
+  * _Or_, you can press the `PROG` button, which will reprogram the FPGA and put you back at the starting point.
 * Push the other middlish button -- you should see different behavior now.
-* Press `BTN3` again to reset.
-* Try `BTN0` (cornermost) now.  You won't see anything flashing, but if you change the slide switches, you'll see the brightness of the 4 smaller green LEDs change.
+* Press `BTN3` (or `RESET` or `PROG`) again to reset.
+* Try `BTN0` (cornermost) now.  You won't see anything flashing, but if you change the slide switches, you'll see the brightness level of the 4 smaller green LEDs change.
 
 ### What happened? 
 
@@ -23,5 +25,6 @@ When you power on the Arty by plugging it in, it automatically loads this bitstr
 
 So far, the USB cable has only been used to supply power to the board.
 
+> Note: there is also a description of this demo, with pictures, available on the [Digilent Blog](https://blog.digilentinc.com/getting-started-with-arty/).
 
 

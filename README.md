@@ -8,3 +8,4 @@ These are for the Arty A7 35T board:
 * `buttons` : ignore
 
 
+TEST
